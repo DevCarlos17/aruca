@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm create:*)",
+      "Bash(npm install:*)",
+      "Bash(node node_modules/.bin/tailwindcss:*)",
+      "Bash(node -e:*)",
+      "Bash(powershell -Command \"Get-ChildItem ''C:\\\\Users\\\\Duarte\\\\Desktop\\\\Ferreteria'' -Force | Where-Object { $_Name -ne ''node_modules'' } | Select-Object Name, Attributes | Sort-Object Name\")",
+      "Bash(dir:*)",
+      "Bash(npm run build:*)",
+      "Bash(node:*)",
+      "Bash(pnpm:*)"
+    ]
+  }
+}
