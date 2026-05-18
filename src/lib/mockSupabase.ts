@@ -140,7 +140,6 @@ class QueryBuilder {
   private _isCount = false
   private _isHead = false
   private _afterMutationSelect = false
-  private _afterMutationFields = '*'
 
   constructor(private table: keyof MockStore) {}
 
@@ -149,7 +148,6 @@ class QueryBuilder {
   select(fields = '*', opts?: { count?: 'exact'; head?: boolean }) {
     if (this._op === 'insert' || this._op === 'update') {
       this._afterMutationSelect = true
-      this._afterMutationFields = fields
     } else {
       this._op = 'select'
       this._selectStr = fields
@@ -382,7 +380,7 @@ class QueryBuilder {
     })
   }
 
-  private _resolveJoin(row: Row, joinTable: string, rawFields: string): unknown {
+  private _resolveJoin(row: Row, joinTable: string, _rawFields: string): unknown {
     const store = getStore()
 
     // Mapa de relaciones: tabla_padre → { tabla_hija → definición }
